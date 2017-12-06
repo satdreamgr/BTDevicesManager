@@ -207,9 +207,9 @@ def autostart(reason, **kwargs):
 			open("/etc/bluetooth/main.conf", "w").write("[Policy]\nAutoEnable=true\n")
 			eConsoleAppContainer().execute("/etc/init.d/bluetooth restart")
 		cmd = None
-		if HardwareInfo().get_device_model() in ("osmini", "osminiplus"):
+		if HardwareInfo().get_device_model() in ("osmega"):
 			cmd = "hciattach ttyS1 rtk_h5 && /etc/init.d/bluetooth restart"
-		if HardwareInfo().get_device_model() in ("osmega", "osnino"):
+		if HardwareInfo().get_device_model() in ("osmini", "osminiplus", "osnino"):
 			cmd = "hciattach ttyS2 rtk_h5 && /etc/init.d/bluetooth restart"
 		if cmd:
 			print "[BluetoothManager] autostart: %s" % cmd
