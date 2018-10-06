@@ -209,7 +209,7 @@ def autostart(reason, **kwargs):
 		cmd = None
 		if HardwareInfo().get_device_model() in ("osmega"):
 			cmd = "hciattach ttyS1 rtk_h5 && /etc/init.d/bluetooth restart"
-		if HardwareInfo().get_device_model() in ("osmini", "osminiplus", "osnino"):
+		if HardwareInfo().get_device_model() in ("osmini", "osminiplus", "osnino", "osninoplus", "osninopro"):
 			cmd = "hciattach ttyS2 rtk_h5 && /etc/init.d/bluetooth restart"
 		if cmd:
 			print "[BluetoothManager] autostart: %s" % cmd
