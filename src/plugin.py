@@ -35,7 +35,7 @@ from bluetool import Bluetooth
 import os
 
 class BluetoothDevicesManager(Screen):
-	skin = 	"""
+	skin = """
 		<screen name="BluetoothDevicesManager" position="center,center" size="700,450" >
 		<ePixmap pixmap="skin_default/buttons/red.png" position="10,10" size="35,25" alphatest="on" />
 		<ePixmap pixmap="skin_default/buttons/green.png" position="180,10" size="35,25" alphatest="on" />
@@ -58,7 +58,7 @@ class BluetoothDevicesManager(Screen):
 		# initialize bluetooh
 		self.bluetool = Bluetooth()
 
-		self["actions"]  = ActionMap(["OkCancelActions","WizardActions", "ColorActions", "SetupActions", "NumberActions", "MenuActions"], {
+		self["actions"] = ActionMap(["OkCancelActions","WizardActions", "ColorActions", "SetupActions", "NumberActions", "MenuActions"], {
 			"ok": self.keyOK,
 			"cancel": self.keyCancel,
 			"red": self.keyRed,
@@ -68,10 +68,10 @@ class BluetoothDevicesManager(Screen):
 		}, -1)
 
 		self["ConnStatus"] = Label()
-		self["key_red"]    = Label(_("Scan"))
-		self["key_green"]  = Label(_("Connect"))
+		self["key_red"] = Label(_("Scan"))
+		self["key_green"] = Label(_("Connect"))
 		self["key_yellow"] = Label(_("Disconnect"))
-		self["key_blue"]   = Label(_("Paired"))
+		self["key_blue"] = Label(_("Paired"))
 
 		self.devicelist = []
 		self["devicelist"] = MenuList(self.devicelist)
