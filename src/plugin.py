@@ -59,12 +59,12 @@ class BluetoothDevicesManager(Screen):
 		self.bluetool = Bluetooth()
 
 		self["actions"]  = ActionMap(["OkCancelActions","WizardActions", "ColorActions", "SetupActions", "NumberActions", "MenuActions"], {
-			"ok"    : self.keyOK,
+			"ok": self.keyOK,
 			"cancel": self.keyCancel,
-			"red"   : self.keyRed,
-			"green" : self.keyGreen,
+			"red": self.keyRed,
+			"green": self.keyGreen,
 			"yellow": self.keyYellow,
-			"blue"  : self.keyBlue,
+			"blue": self.keyBlue,
 		}, -1)
 
 		self["ConnStatus"] = Label()
