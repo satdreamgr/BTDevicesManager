@@ -34,6 +34,7 @@ from bluetool import Bluetooth
 
 import os
 
+
 class BluetoothDevicesManager(Screen):
 	skin = """
 		<screen name="BluetoothDevicesManager" position="center,center" size="700,450" >
@@ -195,8 +196,10 @@ class BluetoothDevicesManager(Screen):
 	def setListOnView(self):
 		return self.devicelist
 
+
 def main(session, **kwargs):
 	session.open(BluetoothDevicesManager)
+
 
 def autostart(reason, **kwargs):
 	if reason == 0:
@@ -214,6 +217,7 @@ def autostart(reason, **kwargs):
 		if cmd:
 			print "[BluetoothManager] autostart: %s" % cmd
 			eConsoleAppContainer().execute(cmd)
+
 
 def Plugins(**kwargs):
 	return [PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART], fnc=autostart),
