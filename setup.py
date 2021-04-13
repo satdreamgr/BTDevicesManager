@@ -11,4 +11,3 @@ setup(name='enigma2-plugin-extensions-btdevicesmanager',
 		description='Bluetooth Devices Manager',
 		cmdclass=setup_translate.cmdclass,
 	)
-
