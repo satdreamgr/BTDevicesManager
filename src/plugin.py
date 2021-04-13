@@ -3,19 +3,19 @@
 # Version date - 20.11.2014
 # Coding by a4tech - darezik@gmail.com (oe-alliance)
 #
-# Modified by satdreamgr using only bluetool  
+# Modified by satdreamgr using only bluetool
 #
 # requierments: bluez5 python-bluetool
 # Some Kernel modules for support HID devices
-# 
-# For example: 
-# kernel-module-hid-a4tech 
-# kernel-module-hid-apple 
-# kernel-module-hid-appleir 
-# kernel-module-hid-belkin 
-# kernel-module-hid-magicmouse 
-# kernel-module-hid-microsoft 
-# kernel-module-hid-wacom 
+#
+# For example:
+# kernel-module-hid-a4tech
+# kernel-module-hid-apple
+# kernel-module-hid-appleir
+# kernel-module-hid-belkin
+# kernel-module-hid-magicmouse
+# kernel-module-hid-microsoft
+# kernel-module-hid-wacom
 #====================================================
 
 from . import _
@@ -42,8 +42,8 @@ class BluetoothDevicesManager(Screen):
 		<ePixmap pixmap="skin_default/buttons/green.png" position="180,10" size="35,25" alphatest="on" />
 		<ePixmap pixmap="skin_default/buttons/yellow.png" position="370,10" size="35,25" alphatest="on" />
 		<ePixmap pixmap="skin_default/buttons/blue.png" position="550,10" size="35,25" alphatest="on" />
-		<eLabel name="" position="0,40" size="700,1" zPosition="2" backgroundColor="#ffffff" />		
-		<eLabel name="" position="0,355" size="700,1" zPosition="2" backgroundColor="#ffffff" />			
+		<eLabel name="" position="0,40" size="700,1" zPosition="2" backgroundColor="#ffffff" />
+		<eLabel name="" position="0,355" size="700,1" zPosition="2" backgroundColor="#ffffff" />
 		<widget name="key_red" position="45,10" zPosition="1" size="140,22" font="Regular;22" halign="left" valign="center" backgroundColor="#9f1313" foregroundColor="#ffffff" transparent="1" />
 		<widget name="key_green" position="215,10" zPosition="1" size="140,22" font="Regular;22" halign="left" valign="center" backgroundColor="#1f771f" foregroundColor="#ffffff" transparent="1" />
 		<widget name="key_yellow" position="405,10" zPosition="1" size="140,22" font="Regular;22" halign="left" valign="center" backgroundColor="#a08500" foregroundColor="#ffffff" transparent="1" />
@@ -90,7 +90,7 @@ class BluetoothDevicesManager(Screen):
 
 		if self.scanning:
 			return
- 
+
 		self.setTitle(_("Scanning..."))
 
 		self.devicelist = []
@@ -223,4 +223,3 @@ def Plugins(**kwargs):
 	return [PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART], fnc=autostart),
 		PluginDescriptor(name=_("Bluetooth Devices Manager"),
 		description=_("Manage your bluetooth devices"), icon="plugin.png", where=PluginDescriptor.WHERE_PLUGINMENU, fnc=main)]
-
