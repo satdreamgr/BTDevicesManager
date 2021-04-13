@@ -58,7 +58,7 @@ class BluetoothDevicesManager(Screen):
 		# initialize bluetooh
 		self.bluetool = Bluetooth()
 
-		self["actions"] = ActionMap(["OkCancelActions","WizardActions", "ColorActions", "SetupActions", "NumberActions", "MenuActions"], {
+		self["actions"] = ActionMap(["OkCancelActions", "WizardActions", "ColorActions", "SetupActions", "NumberActions", "MenuActions"], {
 			"ok": self.keyOK,
 			"cancel": self.keyCancel,
 			"red": self.keyRed,
