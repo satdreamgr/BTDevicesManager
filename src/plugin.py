@@ -216,7 +216,7 @@ def autostart(reason, **kwargs):
 			eConsoleAppContainer().execute(cmd)
 
 def Plugins(**kwargs):
-	return [PluginDescriptor(where = [PluginDescriptor.WHERE_AUTOSTART], fnc=autostart),
+	return [PluginDescriptor(where=[PluginDescriptor.WHERE_AUTOSTART], fnc=autostart),
 		PluginDescriptor(name=_("Bluetooth Devices Manager"),
 		description=_("Manage your bluetooth devices"), icon="plugin.png", where=PluginDescriptor.WHERE_PLUGINMENU, fnc=main)]
 
