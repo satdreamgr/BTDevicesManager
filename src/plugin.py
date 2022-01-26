@@ -84,7 +84,7 @@ class BluetoothDevicesManager(Screen):
 		self.keyRed()
 
 	def keyRed(self):
-		print "[BluetoothManager] keyRed"
+		print("[BluetoothManager] keyRed")
 
 		self.showConnections()
 
@@ -103,7 +103,7 @@ class BluetoothDevicesManager(Screen):
 		self.scanning = True
 
 	def DevicesToPair(self):
-		print "[BluetoothManager] DevicesToPair"
+		print("[BluetoothManager] DevicesToPair")
 		self.setTitle(_("Scan Results..."))
 		self.scan.stop()
 		self.scanning = False
@@ -120,7 +120,7 @@ class BluetoothDevicesManager(Screen):
 		self["devicelist"].setList(self.devicelist)
 
 	def showConnections(self):
-		print "[BluetoothManager] showConnections"
+		print("[BluetoothManager] showConnections")
 		connected_devices = ",".join([d['name'] for d in self.bluetool.get_connected_devices()])
 		if not connected_devices:
 			self["ConnStatus"].setText(_("Not connected to any device"))
@@ -128,7 +128,7 @@ class BluetoothDevicesManager(Screen):
 			self["ConnStatus"].setText(_("Connected to %s") % connected_devices)
 
 	def keyGreen(self):
-		print "[BluetoothManager] keyGreen"
+		print("[BluetoothManager] keyGreen")
 
 		selectedItem = self["devicelist"].getCurrent()
 		if selectedItem is None or selectedItem[1] is None:
@@ -158,7 +158,7 @@ class BluetoothDevicesManager(Screen):
 			self["ConnStatus"].setText(_("Fail to pair %s") % device)
 
 	def keyYellow(self):
-		print "[BluetoothManager] keyBlue"
+		print("[BluetoothManager] keyBlue")
 
 		selectedItem = self["devicelist"].getCurrent()
 		if selectedItem is None or selectedItem[1] is None:
@@ -172,7 +172,7 @@ class BluetoothDevicesManager(Screen):
 			self["ConnStatus"].setText(_("Fail to remove %s") % device)
 
 	def keyBlue(self):
-		print "[BluetoothManager] keyBlue"
+		print("[BluetoothManager] keyBlue")
 		self.setTitle(_("Paired Devices"))
 
 		self.devicelist = []
@@ -186,11 +186,11 @@ class BluetoothDevicesManager(Screen):
 		self["devicelist"].setList(self.devicelist)
 
 	def keyCancel(self):
-		print "[BluetoothManager] keyCancel"
+		print("[BluetoothManager] keyCancel")
 		self.close()
 
 	def keyOK(self):
-		print "[BluetoothManager] keyOK"
+		print("[BluetoothManager] keyOK")
 		self.keyGreen()
 
 	def setListOnView(self):
@@ -215,7 +215,7 @@ def autostart(reason, **kwargs):
 		if HardwareInfo().get_device_model() in ("osmini", "osminiplus", "osnino", "osninoplus", "osninopro"):
 			cmd = "hciattach ttyS2 rtk_h5 && /etc/init.d/bluetooth restart"
 		if cmd:
-			print "[BluetoothManager] autostart: %s" % cmd
+			print("[BluetoothManager] autostart: %s" % cmd)
 			eConsoleAppContainer().execute(cmd)
 
 
